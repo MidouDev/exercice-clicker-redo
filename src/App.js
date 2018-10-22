@@ -1,30 +1,37 @@
 import React, { Component } from 'react';
+import Header from './Header'
+import Clicker from './Clicker'
 import './App.css';
-import './bootstrap.min.css'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGhost } from '@fortawesome/free-solid-svg-icons'
-
-
-library.add(faGhost)
+import './bootstrap.min.css';
 
 class App extends Component {
+
+  state = {
+    counter : 0,
+  }
+
+  onPlusClick = () => {
+    this.setState({counter : this.state.counter + 1})
+  }
+
+  onRefreshClick = () => {
+    this.setState({counter : 0})
+  }
+
+  onMinusClick = () => {
+    this.setState({counter : this.state.counter - 1})
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <div className="container">
-            <div className="row m-auto">
-              <i className="fa fa-hand-pointer-o fa-4x text-white"></i>
-              <div className="h1 ml-2 my-auto text-light">React Clicker</div>
-            </div>
-          </div>
-        </header>
-
-        <div>
-          
-        </div>
-        
+        <Header />
+        <Clicker 
+          counter = {this.state.counter}
+          onPlusClick={this.onPlusClick}
+          onRefreshClick={this.onRefreshClick}
+          onMinusClick={this.onMinusClick}
+        />
       </div>
     );
   }

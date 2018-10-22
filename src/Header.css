@@ -1,0 +1,19 @@
+
+.App-header {
+    background-color: #282c34;
+    height: 100px;
+    position: relative;
+    margin-bottom: 50px;
+  }
+  
+  .container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  
+  .container > .row{
+    justify-content: center;
+  }
+  
