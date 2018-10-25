@@ -3,7 +3,7 @@ import './Clicker.css';
 
 const Clicker = ({counter,onPlusClick,onRefreshClick,onMinusClick}) => (
     <div className="container">
-        <div className="clickerContainer">
+        <div className="clickerContainer mt-5">
             <div className="screen d-flex">
                 <div>{counter}</div>
             </div>
